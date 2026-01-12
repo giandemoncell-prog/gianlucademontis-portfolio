@@ -3,138 +3,425 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gianluca Demontis - Educatore e Innovatore</title>
+    <title>Gianluca Demontis - Educatore, Innovatore e Content Creator</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background: white;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        section h3 {
+            color: #764ba2;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            margin-bottom: 12px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        strong {
+            color: #333;
+            font-weight: 600;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+
+        .skill-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 0%);
+            padding: 25px;
+            border-radius: 8px;
+            border: 2px solid #667eea;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .project-card:hover h4,
+        .project-card:hover p {
+            color: white;
+        }
+
+        .project-card h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .project-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        .contact-section {
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .contact-section h2 {
+            border-bottom-color: white;
+            color: white;
+        }
+
+        .contact-section p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
             display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .email-box {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid white;
+            transition: all 0.3s ease;
+        }
+
+        .email-box:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        .email-box a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .email-box:hover a {
+            color: #667eea;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 20px;
-        }
-        .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-            max-width: 600px;
-            padding: 50px 30px;
-            text-align: center;
-        }
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #667eea;
-        }
-        .subtitle {
-            font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
-        }
-        .bio {
-            font-size: 1em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            color: #555;
-            text-align: left;
-        }
-        .skills {
-            margin: 30px 0;
-            text-align: left;
-        }
-        .skills h3 {
-            color: #667eea;
-            margin-bottom: 15px;
-        }
-        .skills ul {
-            list-style: none;
-            columns: 2;
-        }
-        .skills li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-        .skills li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-        }
-        .contact {
-            margin: 30px 0;
-        }
-        .contact a {
-            display: inline-block;
-            margin: 10px 15px;
-            padding: 12px 25px;
-            background: #667eea;
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid white;
         }
-        .contact a:hover {
-            background: #764ba2;
+
+        .social-link:hover {
+            background: white;
+            color: #667eea;
+            transform: scale(1.15);
         }
-        .footer {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-size: 0.9em;
-            color: #999;
+
+        .social-link svg {
+            width: 28px;
+            height: 28px;
         }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 1.8em;
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8rem;
             }
-            .container {
-                padding: 30px 20px;
+
+            section {
+                padding: 25px;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                gap: 15px;
             }
         }
     </style>
 </head>
 <body>
+    <header>
+        <h1>🚀 Gianluca Demontis</h1>
+        <p>Educatore tecnico, innovatore in automazione e creatore di contenuti digitali</p>
+        <p style="font-size: 1rem; opacity: 0.9;">Aiuto persone e aziende a <strong>capire e usare la tecnologia</strong></p>
+    </header>
+
     <div class="container">
-        <h1>Gianluca De Montis</h1>
-        <p class="subtitle">Educatore, Innovatore & Creatore di Contenuti</p>
-        
-        <div class="bio">
-            <p>Sono un educatore con passione per la tecnologia e l'innovazione. Insegno elettronica, programmazione 3D e automazione, con focus su progetti pratici e applicazioni reali.</p>
-            <p style="margin-top: 15px;">Creo contenuti educativi su YouTube e gestisco progetti di automazione e sostenibilità energetica. Interessato a blockchain, energia rinnovabile e trasformazione digitale.</p>
-        </div>
+        <!-- Chi sono -->
+        <section>
+            <h2>Chi sono</h2>
+            <h3>Educatore, innovatore e innovatore tech</h3>
+            <p>
+                Metto insieme <strong>didattica, automazione e creatività</strong> per costruire percorsi formativi, flussi di lavoro intelligenti e progetti tecnologici che abbiano un impatto concreto sulla vita quotidiana.
+            </p>
+            <p>
+                Sono un <strong>educatore e istruttore</strong> con esperienza nell'insegnamento di <strong>elettronica</strong>, <strong>programmazione 3D</strong> e <strong>automazione</strong>. Lavoro con studenti e tirocinanti aiutandoli a trasformare concetti complessi in competenze pratiche, con un approccio <strong>pedagogico, chiaro e orientato al fare</strong>.
+            </p>
+            <p>
+                Come <strong>content creator su YouTube</strong>, produco video su video production, strumenti di <strong>Intelligenza Artificiale</strong> e tutorial tech. Il mio obiettivo è accompagnare le persone nell'uso consapevole della tecnologia: dall'ottimizzazione dei workflow alla creazione di contenuti, fino all'implementazione di soluzioni IoT e automazioni personalizzate.
+            </p>
+            <p>
+                Parallelamente porto avanti progetti da <strong>innovatore</strong> in ambito <strong>real estate</strong>, <strong>energie rinnovabili</strong> (solare/eolico) e <strong>criptovalute</strong>, con un focus su analisi di redditività, gestione del rischio e sostenibilità nel lungo periodo.
+            </p>
+        </section>
 
-        <div class="skills">
-            <h3>Competenze</h3>
-            <ul>
-                <li>Educazione tecnica e mentoring</li>
-                <li>Automazione e workflow (n8n)</li>
-                <li>Sviluppo web e content creation</li>
-                <li>Sistemi di energia rinnovabile</li>
-                <li>Videomaking e YouTube optimization</li>
-                <li>Real estate e investimenti</li>
-            </ul>
-        </div>
+        <!-- Competenze -->
+        <section>
+            <h2>Competenze & Servizi</h2>
+            <p style="margin-bottom: 25px;">
+                Dal <strong>mentoring tecnico</strong> alla <strong>progettazione di workflow automatizzati</strong>, dal <strong>video marketing</strong> agli <strong>impianti rinnovabili</strong>: costruisco soluzioni che mettono la tecnologia al servizio di persone e progetti.
+            </p>
 
-        <div class="contact">
-            <p style="margin-bottom: 20px; color: #666;">Collegati con me:</p>
-            <a href="https://www.youtube.com/c/YourChannel" target="_blank">YouTube</a>
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
-            <a href="mailto:luca@gianlucademontis.xyz">Email</a>
-        </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h4>🤖 Automazione & Workflow</h4>
+                    <p>Design e implementazione di flussi automatizzati con n8n, self‑hosted su Raspberry Pi tramite Docker e Cloudflare Tunnels.</p>
+                </div>
 
-        <div class="footer">
-            <p>&copy; 2026 Gianluca Demontis. Basato in Sardegna, Italia.</p>
-        </div>
+                <div class="skill-card">
+                    <h4>🌐 Sviluppo Web</h4>
+                    <p>Siti statici veloci, chiari e responsive, pensati per supportare percorsi di formazione e contenuti digitali.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h4>📹 Video & Content</h4>
+                    <p>Produzione video, design di thumbnail, ottimizzazione SEO e strategia contenuti per canali YouTube educativi e tech.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h4>♻️ Energie Rinnovabili</h4>
+                    <p>Analisi e configurazione di piccoli sistemi solari/eolici, valutazione di efficienza e ritorno dell'investimento.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h4>📚 Gestione Educativa</h4>
+                    <p>Gestione di corsi e classi online con Google Classroom, Blackboard e Google Suite.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h4>🔧 Prototipazione IoT</h4>
+                    <p>Prototipazione rapida, progetti DIY e applicazioni IoT per il mondo reale.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h4>🏠 Real Estate</h4>
+                    <p>Analisi e valutazione immobiliare, gestione proprietà e ottimizzazione della redditività.</p>
+                </div>
+
+                <div class="skill-card">
+                    <h4>₿ Crypto & Mining</h4>
+                    <p>Analisi di fattibilità, costi, consumi e potenziale di mining e investimenti in criptovalute.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progetti & Presenza Online -->
+        <section>
+            <h2>Progetti & Presenza Online</h2>
+            <p style="margin-bottom: 25px;">
+                Una selezione di <strong>canali e strumenti</strong> attraverso cui condivido progetti, automazioni, contenuti formativi e sperimentazioni su energia, IoT e investimenti tech.
+            </p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h4>📺 YouTube</h4>
+                    <p>Canale YouTube · Video production & AI tools</p>
+                    <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Tutorial tech, workflow di automazione, strumenti AI per creators e formazione tecnica.</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>🤖 Automazione</h4>
+                    <p>n8n self‑hosted · Automazione su Raspberry Pi</p>
+                    <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Istanza n8n su Cloudflare Tunnel: n8n.gianlucademontis.xyz</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>💼 Portfolio</h4>
+                    <p>Portfolio statico su Cloudflare Pages</p>
+                    <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Deployato come static HTML su Cloudflare Pages, collegato a GitHub.</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>📖 Education</h4>
+                    <p>Corsi e gestione classi online</p>
+                    <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Creazione e gestione su Google Classroom e Blackboard.</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>🏗️ Investimenti</h4>
+                    <p>Real estate & energy‑driven projects</p>
+                    <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Analisi immobili e progetti su energia rinnovabile.</p>
+                </div>
+
+                <div class="project-card">
+                    <h4>💰 Crypto</h4>
+                    <p>Cryptocurrency & mining profitability</p>
+                    <p style="font-size: 0.85rem; margin-top: 10px; opacity: 0.8;">Strategie di investimento e mining su Kraken, Binance, Hype.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contatti -->
+        <section class="contact-section">
+            <h2>Parliamo del tuo Prossimo Progetto</h2>
+            <p>
+                Se stai cercando qualcuno che unisca <strong>competenze tecniche</strong>, <strong>capacità didattica</strong> e <strong>visione innovativa</strong>, contattami subito!
+            </p>
+
+            <div class="contact-info">
+                <div class="email-box">
+                    <p style="margin: 0; font-size: 0.9rem; opacity: 0.9;">📧 Scrivimi un'email</p>
+                    <a href="mailto:info@gianlucademontis.xyz">info@gianlucademontis.xyz</a>
+                </div>
+            </div>
+
+            <h3 style="color: white; margin-top: 40px; margin-bottom: 20px; border: none;">Raggiungimi sui miei canali</h3>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@GianlucaDemontis" target="_blank" rel="noopener noreferrer" class="social-link" title="YouTube">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/gianlucademontis" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.475-2.236-1.986-2.236-1.081 0-1.722.722-2.004 1.418-.103.249-.129.597-.129.946v5.441h-3.554s.05-8.736 0-9.646h3.554v1.348c.421-.649 1.174-1.573 2.853-1.573 2.08 0 3.641 1.36 3.641 4.28v5.591zM5.337 8.855c-1.144 0-1.915-.762-1.915-1.715 0-.955.77-1.715 1.916-1.715.96 0 1.914.76 1.914 1.715 0 .953-.753 1.715-1.915 1.715zm1.946 11.597H3.392V9.806h3.891v10.646zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+                </a>
+                <a href="https://github.com/giandemoncell-prog/gianlucademontis-portfolio" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+                    <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+        </section>
     </div>
+
+    <footer>
+        <p>&copy; 2026 Gianluca Demontis. Tutti i diritti riservati. | Educatore, Innovatore, Content Creator</p>
+    </footer>
 </body>
 </html>
